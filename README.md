@@ -1,14 +1,72 @@
 # hsv_color_pickers
 
-Color pickers for HSV Colors.
+[![analysis](https://github.com/WieFel/gallerize/workflows/analysis/badge.svg)](https://github.com/WieFel/gallerize/actions?query=workflow%3Aanalysis)
 
-## Getting Started
+Flutter package for creating customisable Color pickers for HSV Colors.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Hue Picker
+The `HuePicker` is used to let the user pick the hue of a `HSVColor` by selecting it on the slider.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_1.png"  width=50% alt="Hue Slider 1"/>
+
+The height of the slider is customizable.<br/>
+<img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_2.png"  width=50% alt="Hue Slider 2"/>
+
+The slider thumb is as well completely customizable.<br/>
+<img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_3.png"  width=50% alt="Hue Slider 3"/>
+
+### Usage
+```dart
+HuePicker(
+  initialColor: HSVColor.fromColor(Colors.green),
+  onChanged: (HSVColor color) {
+      // do something with color
+  },
+)
+```
+
+### Customize
+Customize the slider's **height** using `trackHeight`:
+```dart
+HuePicker(
+  ...
+  trackHeight: 50,
+)
+```
+
+
+Customize the **thumb** by passing a `thumbOverlayColor` and a custom `thumbShape`:
+```dart
+HuePicker(
+  ...
+  thumbOverlayColor: Colors.green.withOpacity(0.3),
+  thumbShape: HueSliderThumbShape(
+    color: Colors.black,
+    strokeWidth: 8,
+    filled: false,
+    showBorder: true
+  ),
+)
+```
+`HueSliderThumbShape` offers the following properties for customisation:
+- `radius`: the radius of the thumb (double)
+- `filled`: whether the thumb should be filled or not (bool)
+- `color`: main color of the thumb
+- `strokeWidth`: stroke with for non-filled thumb (double)
+- `showBorder`: whether to show the border or not (bool)
+- `borderColor`: color of the border, if shown
+- `borderWidth`: stroke with of the border, if shown (double)
+
+## Coming soon...
+- Saturation Picker
+- Brightness Picker
+
+## Contribute
+If you have any ideas for extending this package or have found a bug, please contribute!
+
+1. You'll need a GitHub account.
+2. Fork the [hsv_color_pickers repository](https://github.com/WieFel/hsv_color_pickers).
+3. Work on your feature/bug.
+4. Create a pull request.
+5. Star this project. ⭐
+6. Become a hero!! 🎉
