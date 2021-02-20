@@ -1,19 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hsv_color_pickers/widgets/common.dart';
 
 /// This class defines a slider for picking the hue of a [HSVColor].
 class HuePicker extends StatefulWidget {
-  /// The initial [Color] which should be set on the color slider. Either this
-  /// color should be set at the beginning, or [initialHSVColor].
-  final Color initialColor;
-
   /// The initial [HSVColor] which should be set on the color slider. Either this
   /// color should be set at the beginning, or [initialColor].
-  final HSVColor initialHSVColor;
+  final HSVColor initialColor;
 
   /// Callback which is triggered on every change of the color slider's value.
-  final Function(Color) onColorValueChange;
+  final HSVColorChange onChanged;
 
   /// The height of the slider's track.
   ///
@@ -23,12 +20,10 @@ class HuePicker extends StatefulWidget {
   /// Creates an instance of [HuePicker].
   HuePicker({
     Key key,
-    this.initialColor = Colors.blue,
-    this.initialHSVColor,
-    this.onColorValueChange,
+    @required this.initialColor,
+    this.onChanged,
     this.trackHeight = 15,
-  })  : assert(initialColor != null && initialHSVColor == null ||
-            initialColor == null && initialHSVColor != null),
+  })  : assert(initialColor != null),
         super(key: key);
 
   @override
@@ -52,9 +47,7 @@ class _HuePickerState extends State<HuePicker> {
 
   @override
   void initState() {
-    _color = widget.initialColor != null
-        ? HSVColor.fromColor(widget.initialColor)
-        : widget.initialHSVColor;
+    _color = widget.initialColor;
     super.initState();
   }
 
@@ -80,7 +73,7 @@ class _HuePickerState extends State<HuePicker> {
             setState(() {
               _color = _color.withHue(hue);
             });
-            widget.onColorValueChange?.call(_color.toColor());
+            widget.onChanged?.call(_color);
           },
         ),
       ),

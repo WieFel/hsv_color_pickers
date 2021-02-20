@@ -33,10 +33,10 @@ class _ExampleAppState extends State<ExampleApp> {
               color: color,
             ),
             HuePicker(
-              initialColor: Color(color.value),
-              onColorValueChange: (color) {
+              initialColor: HSVColor.fromColor(color),
+              onChanged: (color) {
                 setState(() {
-                  this.color = color;
+                  this.color = color.toColor();
                 });
               },
             ),
