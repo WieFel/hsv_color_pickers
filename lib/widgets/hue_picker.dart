@@ -9,20 +9,31 @@ class HuePicker extends StatefulWidget {
   /// color should be set at the beginning, or [initialColor].
   final HSVColor initialColor;
 
-  /// Callback which is triggered on every change of the color slider's value.
-  final HSVColorChange onChanged;
-
   /// The height of the slider's track.
   ///
   /// Defaults to 15px.
   final double trackHeight;
 
+  /// Callback which is triggered on every change of the color slider's value.
+  /// Check [Slider.onChanged].
+  final HSVColorChange onChanged;
+
+  /// Callback which is triggered when the user starts dragging.
+  /// Check [Slider.onChangeStart].
+  final HSVColorChange onChangeStart;
+
+  /// Callback which is triggered when the user finishes dragging.
+  /// Check [Slider.onChangeEnd].
+  final HSVColorChange onChangeEnd;
+
   /// Creates an instance of [HuePicker].
   HuePicker({
     Key key,
     @required this.initialColor,
-    this.onChanged,
     this.trackHeight = 15,
+    this.onChanged,
+    this.onChangeStart,
+    this.onChangeEnd,
   })  : assert(initialColor != null),
         super(key: key);
 
@@ -75,6 +86,8 @@ class _HuePickerState extends State<HuePicker> {
             });
             widget.onChanged?.call(_color);
           },
+          onChangeStart: (_) => widget.onChangeStart?.call(_color),
+          onChangeEnd: (_) => widget.onChangeEnd?.call(_color),
         ),
       ),
     );
