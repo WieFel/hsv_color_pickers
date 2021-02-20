@@ -32,13 +32,22 @@ class _ExampleAppState extends State<ExampleApp> {
               width: 50,
               color: color,
             ),
-            HuePicker(
-              initialColor: HSVColor.fromColor(color),
-              onChanged: (color) {
-                setState(() {
-                  this.color = color.toColor();
-                });
-              },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: HuePicker(
+                initialColor: HSVColor.fromColor(color),
+                onChanged: (color) {
+                  setState(() {
+                    this.color = color.toColor();
+                  });
+                },
+                thumbShape: HueSliderThumbShape(
+                  color: Colors.white,
+                  borderColor: Colors.black,
+                  filled: false,
+                  showBorder: true,
+                ),
+              ),
             ),
           ],
         ),
