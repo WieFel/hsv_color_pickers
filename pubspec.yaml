@@ -1,8 +1,7 @@
 name: hsv_color_pickers
 description: Color pickers for HSV Colors.
 version: 0.0.1
-author: Felix Wielander <felix.wielander@gmail.com>
-homepage:
+repository: https://github.com/WieFel/hsv_color_pickers
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
