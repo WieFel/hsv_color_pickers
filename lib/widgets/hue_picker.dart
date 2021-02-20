@@ -133,11 +133,13 @@ class HueTrackShape extends RoundedRectSliderTrackShape {
 /// Defines a custom thumb shape for a [Slider].
 class HueSliderThumbShape extends RoundSliderThumbShape {
   /// The radius of the slider thumb.
+  ///
+  /// Defaults to 10.
   final double radius;
 
   /// Whether the thumb should be filled or not on the inside.
   ///
-  /// Defaults to `false`.
+  /// Defaults to `true`.
   final bool filled;
 
   /// Main color of the thumb (either fill color or stroke color if filled: `false`).
@@ -152,7 +154,7 @@ class HueSliderThumbShape extends RoundSliderThumbShape {
 
   /// Whether an additional border should be shown around the thumb.
   ///
-  /// Defaults to `true`.
+  /// Defaults to `false`.
   final bool showBorder;
 
   /// The [Color] of the additional border around the thumb.
