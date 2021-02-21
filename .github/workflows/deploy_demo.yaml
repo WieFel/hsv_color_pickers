@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - '*'
+    branches: [ dev ]
 
 jobs:
   deploy-for-web:
