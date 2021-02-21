@@ -1,4 +1,4 @@
-name: Deploy example
+name: Deploy demo
 
 on:
   push:
@@ -16,12 +16,12 @@ jobs:
       - run: flutter config --enable-web
       - run: flutter pub get
       - name: Build for web
-        working-directory: example/
+        working-directory: demo/
         run: flutter build web --release
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: example/build/web # The folder the action should deploy.
+          FOLDER: demo/build/web # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
