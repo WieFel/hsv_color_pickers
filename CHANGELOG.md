@@ -1,3 +1,8 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.2] - 21.02.2021.
 
-* TODO: Describe initial release.
+- Updated README.
+
+## [0.0.1] - 21.02.2021.
+
+- Initial publish of project containing HuePicker.
+- Demo app using gallerize package
