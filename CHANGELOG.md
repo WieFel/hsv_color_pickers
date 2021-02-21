@@ -1,3 +1,7 @@
+## [0.0.3] - 21.02.2021.
+
+- Set up gallery page for package.
+
 ## [0.0.2] - 21.02.2021.
 
 - Updated README.
