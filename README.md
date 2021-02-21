@@ -11,12 +11,10 @@ The `HuePicker` is used to let the user pick the hue of a `HSVColor` by selectin
 
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_1.png"  width=50% alt="Hue Slider 1"/>
 
-
-The height of the slider is customizable.
+The height of the slider is customizable.<br />
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_2.png"  width=50% alt="Hue Slider 2"/>
 
-
-The slider thumb is as well completely customizable.
+The slider thumb is as well completely customizable.<br />
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_3.png"  width=50% alt="Hue Slider 3"/>
 
 ### Usage
