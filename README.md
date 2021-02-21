@@ -1,5 +1,7 @@
 # hsv_color_pickers
 
+[![gallerize](https://img.shields.io/badge/gallerize-check%20demo-purple?logo=flutter&logoColor=blue)](https://wiefel.github.io/hsv_color_pickers/#/)
+[![pub.dev](https://img.shields.io/pub/v/hsv_color_pickers?logo=dart)](https://pub.dev/packages/hsv_color_pickers)
 [![analysis](https://github.com/WieFel/gallerize/workflows/analysis/badge.svg)](https://github.com/WieFel/gallerize/actions?query=workflow%3Aanalysis)
 
 Flutter package for creating customisable Color pickers for HSV Colors.
@@ -9,10 +11,12 @@ The `HuePicker` is used to let the user pick the hue of a `HSVColor` by selectin
 
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_1.png"  width=50% alt="Hue Slider 1"/>
 
-The height of the slider is customizable.<br/>
+
+The height of the slider is customizable.
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_2.png"  width=50% alt="Hue Slider 2"/>
 
-The slider thumb is as well completely customizable.<br/>
+
+The slider thumb is as well completely customizable.
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_3.png"  width=50% alt="Hue Slider 3"/>
 
 ### Usage
