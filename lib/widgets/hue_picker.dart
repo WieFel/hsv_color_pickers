@@ -206,10 +206,6 @@ class HueSliderThumbShape extends RoundSliderThumbShape {
       begin: disabledThumbRadius ?? enabledThumbRadius,
       end: enabledThumbRadius,
     );
-    final ColorTween colorTween = ColorTween(
-      begin: sliderTheme.disabledThumbColor,
-      end: sliderTheme.thumbColor,
-    );
 
     final double radius = radiusTween.evaluate(enableAnimation);
 

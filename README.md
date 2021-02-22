@@ -1,4 +1,4 @@
-# hsv_color_pickers
+# HSV Color Pickers
 
 [![gallerize](https://img.shields.io/badge/gallerize-check%20demo-purple?logo=flutter&logoColor=blue)](https://wiefel.github.io/hsv_color_pickers/#/)
 [![pub.dev](https://img.shields.io/pub/v/hsv_color_pickers?logo=dart)](https://pub.dev/packages/hsv_color_pickers)
