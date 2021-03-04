@@ -16,15 +16,15 @@ class HuePicker extends StatefulWidget {
 
   /// Callback which is triggered on every change of the color slider's value.
   /// Check [Slider.onChanged].
-  final HSVColorChange onChanged;
+  final HSVColorChange? onChanged;
 
   /// Callback which is triggered when the user starts dragging.
   /// Check [Slider.onChangeStart].
-  final HSVColorChange onChangeStart;
+  final HSVColorChange? onChangeStart;
 
   /// Callback which is triggered when the user finishes dragging.
   /// Check [Slider.onChangeEnd].
-  final HSVColorChange onChangeEnd;
+  final HSVColorChange? onChangeEnd;
 
   /// The [RoundSliderThumbShape] that should be used for the slider.
   /// It is recommended to use [HueSliderThumbShape] and parametrise it
@@ -34,12 +34,12 @@ class HuePicker extends StatefulWidget {
   final RoundSliderThumbShape thumbShape;
 
   /// The color shown around the thumb when it is being dragged.
-  final Color thumbOverlayColor;
+  final Color? thumbOverlayColor;
 
   /// Creates an instance of [HuePicker].
   HuePicker({
-    Key key,
-    @required this.initialColor,
+    Key? key,
+    required this.initialColor,
     this.trackHeight = 15,
     this.onChanged,
     this.onChangeStart,
@@ -56,7 +56,7 @@ class HuePicker extends StatefulWidget {
 }
 
 class _HuePickerState extends State<HuePicker> {
-  HSVColor _color;
+  late HSVColor _color;
 
   final List<Color> hueColors = [
     const Color.fromARGB(255, 255, 0, 0),
@@ -111,21 +111,22 @@ class _HuePickerState extends State<HuePicker> {
 /// Defines a custom track shape for the hue-[Slider].
 /// Lets the slider thumb slide until the exact end of the slider.
 class HueTrackShape extends RoundedRectSliderTrackShape {
+  @override
   Rect getPreferredRect({
-    @required RenderBox parentBox,
+    required RenderBox parentBox,
     Offset offset = Offset.zero,
-    @required SliderThemeData sliderTheme,
+    required SliderThemeData sliderTheme,
     bool isEnabled = false,
     bool isDiscrete = false,
   }) {
-    final double trackHeight = sliderTheme.trackHeight;
+    final double trackHeight = sliderTheme.trackHeight!;
     final double trackLeft = offset.dx +
-        sliderTheme.thumbShape.getPreferredSize(isEnabled, isDiscrete).width /
+        sliderTheme.thumbShape!.getPreferredSize(isEnabled, isDiscrete).width /
             2;
     final double trackTop =
         offset.dy + (parentBox.size.height - trackHeight) / 2;
     final double trackWidth = parentBox.size.width -
-        sliderTheme.thumbShape.getPreferredSize(isEnabled, isDiscrete).width;
+        sliderTheme.thumbShape!.getPreferredSize(isEnabled, isDiscrete).width;
     return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
   }
 }
@@ -183,21 +184,17 @@ class HueSliderThumbShape extends RoundSliderThumbShape {
   void paint(
     PaintingContext context,
     Offset center, {
-    Animation<double> activationAnimation,
-    @required Animation<double> enableAnimation,
-    bool isDiscrete,
-    TextPainter labelPainter,
-    RenderBox parentBox,
-    @required SliderThemeData sliderTheme,
-    TextDirection textDirection,
-    double value,
-    double textScaleFactor,
-    Size sizeWithOverflow,
+    required Animation<double> activationAnimation,
+    required Animation<double> enableAnimation,
+    required bool isDiscrete,
+    required TextPainter labelPainter,
+    required RenderBox parentBox,
+    required SliderThemeData sliderTheme,
+    required TextDirection textDirection,
+    required double value,
+    required double textScaleFactor,
+    required Size sizeWithOverflow,
   }) {
-    assert(context != null);
-    assert(center != null);
-    assert(enableAnimation != null);
-    assert(sliderTheme != null);
     assert(sliderTheme.disabledThumbColor != null);
     assert(sliderTheme.thumbColor != null);
 
