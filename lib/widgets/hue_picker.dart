@@ -46,8 +46,7 @@ class HuePicker extends StatefulWidget {
     this.onChangeEnd,
     this.thumbShape = const HueSliderThumbShape(),
     this.thumbOverlayColor,
-  })  : assert(initialColor != null),
-        super(key: key);
+  })  : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
