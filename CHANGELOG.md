@@ -1,3 +1,7 @@
+## [0.1.0] - 07.03.2021.
+
+- Null safety.
+
 ## [0.0.4] - 22.02.2021.
 
 - Code improvements to pass static analysis.
