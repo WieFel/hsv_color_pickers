@@ -2,7 +2,7 @@
 
 [![gallerize](https://img.shields.io/badge/gallerize-check%20demo-purple?logo=flutter&logoColor=blue)](https://wiefel.github.io/hsv_color_pickers/#/)
 [![pub.dev](https://img.shields.io/pub/v/hsv_color_pickers?logo=dart)](https://pub.dev/packages/hsv_color_pickers)
-[![analysis](https://github.com/WieFel/gallerize/workflows/analysis/badge.svg)](https://github.com/WieFel/gallerize/actions?query=workflow%3Aanalysis)
+[![analysis](https://github.com/WieFel/hsv_color_pickers/workflows/analysis/badge.svg)](https://github.com/WieFel/hsv_color_pickers/actions?query=workflow%3Aanalysis)
 
 Flutter package for creating customisable Color pickers for HSV Colors.
 
