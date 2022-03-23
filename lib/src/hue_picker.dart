@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hsv_color_pickers/widgets/common.dart';
+import 'package:hsv_color_pickers/src/common.dart';
 
 /// This class defines a slider for picking the hue of a [HSVColor].
 class HuePicker extends StatefulWidget {
