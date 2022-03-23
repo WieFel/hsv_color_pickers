@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:hsv_color_pickers/widgets/common.dart';
+import 'package:hsv_color_pickers/src/common.dart';
 
 /// This class defines a slider for picking the hue of a [HSVColor].
 class HuePicker extends StatefulWidget {
@@ -37,7 +35,7 @@ class HuePicker extends StatefulWidget {
   final Color? thumbOverlayColor;
 
   /// Creates an instance of [HuePicker].
-  HuePicker({
+  const HuePicker({
     Key? key,
     required this.initialColor,
     this.trackHeight = 15,
@@ -46,7 +44,7 @@ class HuePicker extends StatefulWidget {
     this.onChangeEnd,
     this.thumbShape = const HueSliderThumbShape(),
     this.thumbOverlayColor,
-  })  : super(key: key);
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -78,7 +76,7 @@ class _HuePickerState extends State<HuePicker> {
     return Container(
       height: widget.trackHeight,
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: this.hueColors),
+          gradient: LinearGradient(colors: hueColors),
           borderRadius: BorderRadius.circular(widget.trackHeight)),
       child: SliderTheme(
         data: SliderThemeData(
