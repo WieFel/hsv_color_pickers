@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hsv_color_pickers/widgets/common.dart';
 
 /// This class defines a slider for picking the hue of a [HSVColor].
