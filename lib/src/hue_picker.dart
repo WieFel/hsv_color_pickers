@@ -35,7 +35,7 @@ class HuePicker extends StatefulWidget {
   final Color? thumbOverlayColor;
 
   /// Creates an instance of [HuePicker].
-  HuePicker({
+  const HuePicker({
     Key? key,
     required this.initialColor,
     this.trackHeight = 15,
@@ -76,7 +76,7 @@ class _HuePickerState extends State<HuePicker> {
     return Container(
       height: widget.trackHeight,
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: this.hueColors),
+          gradient: LinearGradient(colors: hueColors),
           borderRadius: BorderRadius.circular(widget.trackHeight)),
       child: SliderTheme(
         data: SliderThemeData(
