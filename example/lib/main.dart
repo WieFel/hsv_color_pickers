@@ -97,12 +97,6 @@ class _ControllerExampleState extends State<ControllerExample> {
   void initState() {
     super.initState();
     _controller = HueController(HSVColor.fromColor(Colors.green));
-
-    _controller.addListener(() {
-      setState(() {
-        // Intentionally left empty, to trigger a re-build of the widget
-      });
-    });
   }
 
   @override
@@ -126,7 +120,7 @@ class _ControllerExampleState extends State<ControllerExample> {
             controller: _controller,
             onChanged: (color) {
               setState(() {
-                // _color = color.toColor();
+                // Intentionally left empty, to trigger re-build of Widget
               });
             },
             thumbShape: HueSliderThumbShape(

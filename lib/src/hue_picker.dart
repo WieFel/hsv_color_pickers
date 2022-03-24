@@ -62,7 +62,6 @@ class HuePicker extends StatefulWidget {
 }
 
 class _HuePickerState extends State<HuePicker> {
-  late HSVColor _color;
   late HueController _controller;
 
   final List<Color> hueColors = [
@@ -80,17 +79,11 @@ class _HuePickerState extends State<HuePicker> {
     super.initState();
     // We know that either `widget.initialColor` or `widget.controller` must be
     // defined.
-
-    // Set initialColor. If not defined, get it from controller.
-    _color = widget.initialColor ?? widget.controller!.value;
-    // Set controller. If not defined, initialise it with color.
-    _controller = widget.controller ?? HueController(_color);
+    // Thus, if controller not defined, initialise it with initialColor.
+    _controller = widget.controller ?? HueController(widget.initialColor!);
 
     _controller.addListener(() {
-      // controller received value change from outside -> update state
-      setState(() {
-        _color = _controller.value;
-      });
+      widget.onChanged?.call(_controller.value);
     });
   }
 
@@ -113,16 +106,13 @@ class _HuePickerState extends State<HuePicker> {
         child: Slider(
           min: 0.0,
           max: 360.0,
-          value: _color.hue,
+          value: _controller.value.hue,
           onChanged: (hue) {
-            setState(() {
-              _color = _color.withHue(hue);
-            });
-            _controller.value = _color;
-            widget.onChanged?.call(_color);
+            _controller.value = _controller.value.withHue(hue);
+            widget.onChanged?.call(_controller.value);
           },
-          onChangeStart: (_) => widget.onChangeStart?.call(_color),
-          onChangeEnd: (_) => widget.onChangeEnd?.call(_color),
+          onChangeStart: (_) => widget.onChangeStart?.call(_controller.value),
+          onChangeEnd: (_) => widget.onChangeEnd?.call(_controller.value),
         ),
       ),
     );
