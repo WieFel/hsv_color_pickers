@@ -18,6 +18,7 @@ The slider thumb is as well completely customizable.<br />
 <img src="https://github.com/WieFel/hsv_color_pickers/raw/main/.github/images/hue_picker_3.png"  width=50% alt="Hue Slider 3"/>
 
 ### Usage
+#### Using initialColor
 ```dart
 HuePicker(
   initialColor: HSVColor.fromColor(Colors.green),
@@ -25,6 +26,23 @@ HuePicker(
       // do something with color
   },
 )
+```
+
+#### Using controller
+```dart
+// create controller
+_controller = HueController(HSVColor.fromColor(Colors.green));
+
+// use controller in HuePicker
+HuePicker(
+  controller: _controller,
+  onChanged: (HSVColor color) {
+      // do something with color
+  },
+)
+
+// use controller to set the value of the HuePicker from outside the widget
+_controller.value = HSVColor.fromColor(Colors.blue);
 ```
 
 ### Customize
