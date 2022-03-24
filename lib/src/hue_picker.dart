@@ -1,11 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hsv_color_pickers/src/common.dart';
+import 'package:hsv_color_pickers/src/controller.dart';
 
 /// This class defines a slider for picking the hue of a [HSVColor].
 class HuePicker extends StatefulWidget {
   /// The initial [HSVColor] which should be set on the color slider. Either this
   /// color should be set at the beginning, or [initialColor].
-  final HSVColor initialColor;
+  final HSVColor? initialColor;
+
+  /// Controller to control (get/set) the value of the [HuePicker] from outside
+  /// of the widget.
+  final HueController? controller;
 
   /// The height of the slider's track.
   ///
@@ -37,14 +43,17 @@ class HuePicker extends StatefulWidget {
   /// Creates an instance of [HuePicker].
   const HuePicker({
     Key? key,
-    required this.initialColor,
+    this.initialColor,
+    this.controller,
     this.trackHeight = 15,
     this.onChanged,
     this.onChangeStart,
     this.onChangeEnd,
     this.thumbShape = const HueSliderThumbShape(),
     this.thumbOverlayColor,
-  }) : super(key: key);
+  })  : assert((initialColor != null) ^ (controller != null),
+            "Either initialColor or controller must be set, but not both."),
+        super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -54,6 +63,7 @@ class HuePicker extends StatefulWidget {
 
 class _HuePickerState extends State<HuePicker> {
   late HSVColor _color;
+  late HueController _controller;
 
   final List<Color> hueColors = [
     const Color.fromARGB(255, 255, 0, 0),
@@ -67,8 +77,21 @@ class _HuePickerState extends State<HuePicker> {
 
   @override
   void initState() {
-    _color = widget.initialColor;
     super.initState();
+    // We know that either `widget.initialColor` or `widget.controller` must be
+    // defined.
+
+    // Set initialColor. If not defined, get it from controller.
+    _color = widget.initialColor ?? widget.controller!.value;
+    // Set controller. If not defined, initialise it with color.
+    _controller = widget.controller ?? HueController(_color);
+
+    _controller.addListener(() {
+      // controller received value change from outside -> update state
+      setState(() {
+        _color = _controller.value;
+      });
+    });
   }
 
   @override
@@ -95,6 +118,7 @@ class _HuePickerState extends State<HuePicker> {
             setState(() {
               _color = _color.withHue(hue);
             });
+            _controller.value = _color;
             widget.onChanged?.call(_color);
           },
           onChangeStart: (_) => widget.onChangeStart?.call(_color),
