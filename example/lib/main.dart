@@ -135,7 +135,7 @@ class _ControllerExampleState extends State<ControllerExample> {
             onPressed: () {
               _controller.value = HSVColor.fromColor(Colors.blue);
             },
-            child: Text("Reset to blue form the outside"))
+            child: Text("Reset to blue form outside"))
       ],
     );
   }
