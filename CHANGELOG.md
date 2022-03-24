@@ -1,3 +1,8 @@
+## [0.2.0] - 24.03.2022.
+
+- Controller for controlling HuePicker from the outside.
+- Refactorings.
+
 ## [0.1.0] - 07.03.2021.
 
 - Null safety.
