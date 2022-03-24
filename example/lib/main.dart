@@ -56,10 +56,9 @@ class _InitialColorExampleState extends State<InitialColorExample> {
           "Example using initialColor",
           style: Theme.of(context).textTheme.headline6,
         ),
-        Container(
-          height: 50,
-          width: 50,
-          color: _color,
+        CircleAvatar(
+          radius: 32,
+          backgroundColor: _color,
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -109,10 +108,9 @@ class _ControllerExampleState extends State<ControllerExample> {
           "Example using controller",
           style: Theme.of(context).textTheme.headline6,
         ),
-        Container(
-          height: 50,
-          width: 50,
-          color: _controller.value.toColor(),
+        CircleAvatar(
+          radius: 32,
+          backgroundColor: _controller.value.toColor(),
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
