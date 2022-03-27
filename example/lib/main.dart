@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:hsv_color_pickers/hsv_color_pickers.dart';
 
 void main() {
-  runApp(ExampleApp());
+  runApp(const ExampleApp());
 }
 
 class ExampleApp extends StatefulWidget {
+  const ExampleApp({Key? key}) : super(key: key);
+
   @override
   _ExampleAppState createState() => _ExampleAppState();
 }
@@ -19,10 +21,10 @@ class _ExampleAppState extends State<ExampleApp> {
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text("HSV Colors Pickers"),
+            title: const Text("HSV Colors Pickers"),
           ),
           body: Column(
-            children: [
+            children: const [
               Expanded(
                 child: InitialColorExample(),
               ),
@@ -66,10 +68,10 @@ class _InitialColorExampleState extends State<InitialColorExample> {
             initialColor: HSVColor.fromColor(_color),
             onChanged: (color) {
               setState(() {
-                this._color = color.toColor();
+                _color = color.toColor();
               });
             },
-            thumbShape: HueSliderThumbShape(
+            thumbShape: const HueSliderThumbShape(
               color: Colors.white,
               borderColor: Colors.black,
               filled: false,
@@ -121,7 +123,7 @@ class _ControllerExampleState extends State<ControllerExample> {
                 // Intentionally left empty, to trigger re-build of Widget
               });
             },
-            thumbShape: HueSliderThumbShape(
+            thumbShape: const HueSliderThumbShape(
               color: Colors.white,
               borderColor: Colors.black,
               filled: false,
@@ -133,7 +135,7 @@ class _ControllerExampleState extends State<ControllerExample> {
             onPressed: () {
               _controller.value = HSVColor.fromColor(Colors.blue);
             },
-            child: Text("Reset to blue form outside"))
+            child: const Text("Reset to blue form outside"))
       ],
     );
   }

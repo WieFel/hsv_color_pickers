@@ -4,41 +4,45 @@ import 'package:flutter/material.dart';
 import 'package:gallerize/gallerize.dart';
 import 'package:gallerize/themes/gallerize_theme_data.dart';
 
-void main() => runApp(DemoApp());
+void main() => runApp(const DemoApp());
 
 /// Demo app that provides a show-case of different backdrop use cases.
 class DemoApp extends StatelessWidget {
+  const DemoApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "HSV Color Pickers - Gallery",
       theme: GallerizeThemeData.darkThemeData,
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
 
 /// The home page of the demo app showing a selection of use cases.
 class HomePage extends StatelessWidget {
-  List<UseCase> _useCases = [
+  final List<UseCase> _useCases = const [
     HuePickerUseCase(),
   ];
+
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HSV Color Pickers - Gallery"),
+        title: const Text("HSV Color Pickers - Gallery"),
       ),
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.all(16.0),
-            child:
-                Text("This app shows the basic usages of the different widgets "
-                    "that are offered by the hsv_color_pickers package. "
-                    "Open any one to show information about it, preview it and "
-                    "look at its code."),
+            margin: const EdgeInsets.all(16.0),
+            child: const Text(
+                "This app shows the basic usages of the different widgets "
+                "that are offered by the hsv_color_pickers package. "
+                "Open any one to show information about it, preview it and "
+                "look at its code."),
           ),
           ListView.separated(
             itemCount: _useCases.length,
@@ -47,7 +51,7 @@ class HomePage extends StatelessWidget {
               onTap: () => _openDemoPage(context, _useCases[index]),
             ),
             shrinkWrap: true,
-            separatorBuilder: (context, index) => Divider(),
+            separatorBuilder: (context, index) => const Divider(),
           ),
         ],
       ),

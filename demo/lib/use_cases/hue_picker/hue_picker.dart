@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hsv_color_pickers/hsv_color_pickers.dart';
 
 class HuePickerPage extends StatefulWidget {
+  const HuePickerPage({Key? key}) : super(key: key);
+
   @override
   _HuePickerPageState createState() => _HuePickerPageState();
 }
@@ -36,7 +38,7 @@ class _HuePickerPageState extends State<HuePickerPage> {
               _color = color.toColor();
             });
           },
-          thumbShape: HueSliderThumbShape(
+          thumbShape: const HueSliderThumbShape(
             radius: 16,
           ),
         ),
@@ -50,7 +52,7 @@ class _HuePickerPageState extends State<HuePickerPage> {
             });
           },
           thumbOverlayColor: Colors.orange.withOpacity(0.3),
-          thumbShape: HueSliderThumbShape(
+          thumbShape: const HueSliderThumbShape(
             radius: 25,
             filled: false,
             color: Colors.orange,
