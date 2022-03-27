@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hsv_color_pickers/src/common.dart';
 import 'package:hsv_color_pickers/src/controller.dart';
