@@ -1,3 +1,7 @@
+## [0.2.1] - 27.03.2022.
+
+- Remove unnecessary import.
+
 ## [0.2.0] - 24.03.2022.
 
 - Controller for controlling HuePicker from the outside.

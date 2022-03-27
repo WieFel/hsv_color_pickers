@@ -2,13 +2,13 @@ name: analysis
 on: [push, pull_request]
 
 jobs:
-  package-analysis:
-
+  analysis:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2 # required
-      - uses: axel-op/dart-package-analyzer@v3
+      - uses: subosito/flutter-action@v1
         with:
-          # Required:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          channel: stable
+      - name: analyze
+        run: flutter analyze
