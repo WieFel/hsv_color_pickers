@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  gallerize: ^0.2.0
+  gallerize: ^0.3.0
   hsv_color_pickers:
     path: "../"
 
