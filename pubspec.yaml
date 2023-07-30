@@ -14,8 +14,13 @@ dependencies:
 dev_dependencies:
   flutter_lints: ^1.0.4
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+screenshots:
+  - description: 'Small color slider with ring as slider thumb.'
+    path: screenshots/hue_picker_1.png
+  - description: 'Bigger color slider with white slider thumb.'
+    path: screenshots/hue_picker_2.png
+  - description: 'Very big color slider with black ring as slider thumb.'
+    path: screenshots/hue_picker_3.png
 
 # The following section is specific to Flutter.
 flutter:
