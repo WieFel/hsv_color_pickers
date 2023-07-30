@@ -1,6 +1,6 @@
 name: hsv_color_pickers
 description: Flutter package for creating customisable Color pickers for HSV Colors.
-version: 0.2.2
+version: 0.3.0
 repository: https://github.com/WieFel/hsv_color_pickers
 
 environment:

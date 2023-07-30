@@ -1,3 +1,8 @@
+## [0.3.0] - 30.07.2022
+
+- Upgrade to Flutter 3.10.6
+- Dependency upgrades
+
 ## [0.2.2] - 11.09.2022
 
 - Upgrade to Flutter 3.3.0
