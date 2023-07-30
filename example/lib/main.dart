@@ -23,8 +23,8 @@ class _ExampleAppState extends State<ExampleApp> {
           appBar: AppBar(
             title: const Text("HSV Colors Pickers"),
           ),
-          body: Column(
-            children: const [
+          body: const Column(
+            children: [
               Expanded(
                 child: InitialColorExample(),
               ),
@@ -56,7 +56,7 @@ class _InitialColorExampleState extends State<InitialColorExample> {
       children: [
         Text(
           "Example using initialColor",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         CircleAvatar(
           radius: 32,
@@ -108,7 +108,7 @@ class _ControllerExampleState extends State<ControllerExample> {
       children: [
         Text(
           "Example using controller",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         CircleAvatar(
           radius: 32,
