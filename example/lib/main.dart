@@ -5,14 +5,9 @@ void main() {
   runApp(const ExampleApp());
 }
 
-class ExampleApp extends StatefulWidget {
+class ExampleApp extends StatelessWidget {
   const ExampleApp({Key? key}) : super(key: key);
 
-  @override
-  _ExampleAppState createState() => _ExampleAppState();
-}
-
-class _ExampleAppState extends State<ExampleApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
